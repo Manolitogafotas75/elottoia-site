@@ -81,7 +81,63 @@
       text-decoration: none;
       margin: 0 10px;
     }
-  </style>
+     <style>
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 18px;
+}
+
+.faq-question {
+  background-color: #0a1628;
+  color: #ffd500;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.faq-question:hover {
+  background-color: #12263f;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 15px;
+  background-color: #06192f;
+  border-left: 4px solid #ffd500;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+</style>
+
+<script>
+const faqs = document.querySelectorAll(".faq-question");
+faqs.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const answer = btn.nextElementSibling;
+    const isVisible = answer.style.display === "block";
+    
+    // Cerrar todas primero
+    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
+    
+    // Mostrar solo si estaba oculto
+    if (!isVisible) {
+      answer.style.display = "block";
+    }
+  });
+});
+</script>
+
+  
+  
 </head>
 
 <body>
@@ -123,10 +179,52 @@ Basada en datos históricos reales de los sorteos, la herramienta ofrece a los u
 Es importante destacar que ElottoIA no garantiza la obtención de premios ni promueve el juego como medio de ingresos. Nuestro propósito es ofrecer una herramienta educativa, informativa y de entretenimiento, mejorando la experiencia de participar en el Euromillones a través de la exploración de datos, el uso de filtros personalizados y el análisis de patrones históricos.
 </div>
 </section>
+ <section class="section">
+  <h2>¿Cómo funciona ElottoIA?</h2>
+  <div style="max-width: 800px; margin: auto; font-size: 18px; line-height: 1.6;">
+    <p>ElottoIA utiliza datos estadísticos reales del Euromillones para ayudarte a generar combinaciones más informadas. Analizamos sorteos históricos para identificar patrones, frecuencias y relaciones numéricas relevantes.</p>
+    <p>El usuario puede seleccionar entre tres modos:</p>
+    <ul style="text-align: left;">
+      <li><strong>Aleatorio:</strong> Combinaciones puras al azar.</li>
+      <li><strong>Frecuencia:</strong> Basado en los números más repetidos históricamente.</li>
+      <li><strong>Híbrido:</strong> Una combinación de lógica, IA y azar.</li>
+    </ul>
+    <p>Además, puedes aplicar filtros personalizados como evitar números consecutivos, balancear pares/impares o definir un rango de suma total.</p>
+    <p>Todo esto convierte la experiencia de generar combinaciones en algo interactivo, educativo y entretenido.</p>
+  </div>
+</section>
+
 <!-- Video Explicativo -->
 <section class="section">
   <h2>🎥 Mira cómo funciona</h2>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/8nlH6O2fxFQ" title="ElottoIA demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section class="section">
+  <h2>❓ Preguntas Frecuentes</h2>
+  <div class="faq-container">
+    
+    <div class="faq-item">
+      <button class="faq-question">¿ElottoIA garantiza premios en Euromillones?</button>
+      <div class="faq-answer">
+        <p>No. ElottoIA no puede predecir resultados ni asegurar premios. Es una herramienta que ayuda a generar combinaciones más informadas utilizando datos estadísticos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Necesito registrarme para usar ElottoIA?</button>
+      <div class="faq-answer">
+        <p>No es necesario registrarse para usar la versión gratuita. El acceso premium ofrece funciones adicionales como modos avanzados, análisis predictivo y exportación de combinaciones.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿ElottoIA promueve el juego o las apuestas?</button>
+      <div class="faq-answer">
+        <p>No. ElottoIA está pensada como herramienta educativa y de entretenimiento. No fomenta el juego como método para obtener ingresos ni promueve conductas adictivas.</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- Footer -->
