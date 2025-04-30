@@ -119,24 +119,25 @@
 </style>
 
 <script>
-const faqs = document.querySelectorAll(".faq-question");
-faqs.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const answer = btn.nextElementSibling;
-    const isVisible = answer.style.display === "block";
-    
-    // Cerrar todas primero
-    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
-    
-    // Mostrar solo si estaba oculto
-    if (!isVisible) {
-      answer.style.display = "block";
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const faqs = document.querySelectorAll(".faq-question");
+  faqs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const isVisible = answer.style.display === "block";
+
+      // Oculta todas las respuestas
+      document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
+
+      // Muestra solo si estaba oculta
+      if (!isVisible) {
+        answer.style.display = "block";
+      }
+    });
   });
+});
 </script>
 
-  
-  
 </head>
 
 <body>
